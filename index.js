@@ -23,7 +23,7 @@ bot.on("messageUpdate", async(oldMessage, newMessage) => {
     if(oldMessage.content === newMessage.content){
         return;
     }
-    if(!newMessage.guild.id === "849765842887114792") return;
+    if(!newMessage.guild.id === process.env.GUILD) return;
     const args = newMessage.content.split(/ +/g);
     await User.findOne({
         userId: newMessage.author.id
